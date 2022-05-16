@@ -1,5 +1,7 @@
 import { useSelector } from 'react-redux';
 import './Container.styles.scss';
+import Details from '../Details/Details';
+import Header from '../Header/Header';
 
 const Container = () => {
   const countries = useSelector((state) => state.countries);
@@ -10,7 +12,8 @@ const Container = () => {
 
   return (
     <div>
-      <h1>Im the container</h1>
+      <Header />
+      <Details />
       <button type="button" onClick={printCountries}>
         Print
       </button>
