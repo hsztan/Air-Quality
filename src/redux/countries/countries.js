@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import countries from './countryData';
+import countries from './data';
 
 const initialState = countries;
 
