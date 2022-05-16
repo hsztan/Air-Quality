@@ -6,13 +6,8 @@ const initialState = countries;
 const countriesSlice = createSlice({
   name: 'countries',
   initialState,
-  reducers: {
-    getCountry: (state, action) => {
-      const { country } = action.payload;
-      return state.filter((item) => item.name === country);
-    },
-  },
+  reducers: {},
 });
 
-export const { getCountry } = countriesSlice.actions;
+export const { getCountries, changeCountry } = countriesSlice.actions;
 export default countriesSlice.reducer;
