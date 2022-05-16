@@ -3,7 +3,7 @@ import countries from './countryData';
 
 const initialState = countries;
 
-const countrySlice = createSlice({
+const countriesSlice = createSlice({
   name: 'countries',
   initialState,
   reducers: {
@@ -14,5 +14,5 @@ const countrySlice = createSlice({
   },
 });
 
-export const { getCountry } = countrySlice.actions;
-export default countrySlice.reducer;
+export const { getCountry } = countriesSlice.actions;
+export default countriesSlice.reducer;
