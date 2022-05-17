@@ -1,3 +1,28 @@
 .container {
-  border: none;
+  color: #fff;
+  .top {
+    height: 25vh;
+  }
+  .bottom {
+    height: 75vh;
+  }
+  .continents {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(calc(100% / 3), 1fr));
+    :nth-child(odd) {
+       background-color: #cc3f74;
+      }
+    a {
+      font-size: 0.7rem;
+      padding: 0.5rem;
+      overflow-wrap: break-word;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: inherit;
+      background-color: #fc5193;
+      height: 33vw;
+    }
+  }
 }

@@ -3,7 +3,6 @@ import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { getAirQuality } from '../../redux/countries/countries';
 import { getCities } from '../../redux/cities/cities';
-// import { countryCodes } from '../../redux/countries/data';
 import './Container.styles.scss';
 import LocationList from '../LocationList/LocationList';
 
@@ -40,10 +39,10 @@ const Container = (props) => {
   if (country) {
     return (
       <div className="container">
-        <div>
+        <div className="top">
           <LocationList location={country} type="detail" />
         </div>
-        <div>
+        <div className="bottom">
           <LocationList cities={cities} type="list" />
         </div>
       </div>
@@ -51,10 +50,10 @@ const Container = (props) => {
   } else if (continent) {
     return (
       <div className="container">
-        <div>
+        <div className="top">
           <LocationList location={continent} type="detail" />
         </div>
-        <div>
+        <div className="bottom">
           <LocationList countries={filteredCountries} type="list" />
         </div>
       </div>
