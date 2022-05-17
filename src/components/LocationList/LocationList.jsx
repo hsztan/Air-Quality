@@ -2,13 +2,16 @@ import Location from '../Location/Location';
 
 const LocationList = (props) => {
   const { location, type, countries } = props;
-  console.log(type);
 
   if (countries) {
     return (
       <div className="countries-list">
         {countries.map((country) => (
-          <Location key={country.name} location={country.name} />
+          <Location
+            key={country.name}
+            location={country.name}
+            aqi={country.aqi}
+          />
         ))}
       </div>
     );

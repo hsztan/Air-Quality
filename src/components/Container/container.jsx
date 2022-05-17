@@ -1,11 +1,26 @@
 import { Link } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { getAirQuality } from '../../redux/countries/countries';
 import './Container.styles.scss';
 import LocationList from '../LocationList/LocationList';
 
 const Container = (props) => {
   const countries = useSelector((state) => state.countries);
   const { continent, country } = props;
+
+  const dispatch = useDispatch();
+  let filteredCountries;
+  if (continent && !country) {
+    filteredCountries = countries[continent];
+  }
+
+  useEffect(() => {
+    const countriesHaveAQI = filteredCountries?.some((country) => country.aqi);
+    if (filteredCountries && !countriesHaveAQI)
+      dispatch(getAirQuality(filteredCountries));
+  }, [dispatch, filteredCountries]);
+
   if (country) {
     return (
       <div>
@@ -14,7 +29,6 @@ const Container = (props) => {
     );
   }
   if (continent) {
-    const filteredCountries = countries[continent];
     return (
       <div className="container">
         <div>
