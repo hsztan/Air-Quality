@@ -7,7 +7,7 @@ const Home = () => {
 
   return (
     <div className="container">
-      <NavBar />
+      <NavBar title={country || continent || 'continents'} />
       <Container continent={continent} country={country} />
     </div>
   );
