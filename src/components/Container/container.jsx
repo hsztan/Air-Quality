@@ -11,18 +11,15 @@ const Container = (props) => {
 
   const dispatch = useDispatch();
   let filteredCountries;
-  if (continent) {
+  if (continent && !country) {
     filteredCountries = countries[continent];
   }
 
   useEffect(() => {
-    if (!filteredCountries) return;
-    console.log(filteredCountries);
-    const countriesHaveAQI = filteredCountries.some((country) => country.aqi);
-    console.log(countriesHaveAQI);
-    if (countriesHaveAQI) return;
-    if (continent) dispatch(getAirQuality(filteredCountries));
-  }, [dispatch, filteredCountries, continent]);
+    const countriesHaveAQI = filteredCountries?.some((country) => country.aqi);
+    if (filteredCountries && !countriesHaveAQI)
+      dispatch(getAirQuality(filteredCountries));
+  }, [dispatch, filteredCountries]);
 
   if (country) {
     return (
