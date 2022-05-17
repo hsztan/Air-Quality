@@ -11,7 +11,6 @@ const addAirQuality = async (locations) => {
   const locationsWithAQI = locations.map((location, i) => {
     return { ...location, aqi: data[i].list[0].main.aqi };
   });
-  console.log('locationsWithAQI after fetch', locationsWithAQI);
   return locationsWithAQI;
 };
 

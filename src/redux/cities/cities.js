@@ -21,14 +21,6 @@ export const getCities = createAsyncThunk(
   }
 );
 
-export const getCitiesAQI = createAsyncThunk(
-  'cities/getCitiesAQI',
-  async (cities) => {
-    const citiesWithAQI = await getAirQualityAPI(cities.data);
-    return citiesWithAQI;
-  }
-);
-
 const initialState = {
   data: [],
   status: '',
@@ -44,13 +36,6 @@ const citiesSlice = createSlice({
       state.status = 'fullfilled';
     },
     [getCities.pending]: (state, action) => {
-      state.status = 'pending';
-    },
-    [getCitiesAQI.fulfilled]: (state, action) => {
-      state.data = action.payload;
-      state.status = 'fullfilled';
-    },
-    [getCitiesAQI.pending]: (state, action) => {
       state.status = 'pending';
     },
   },

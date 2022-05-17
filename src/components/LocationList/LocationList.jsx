@@ -24,11 +24,7 @@ const LocationList = (props) => {
     return (
       <div className="cities-list">
         {cities.data.map((city) => (
-          <Location
-            key={city.id}
-            location={city.city}
-            // aqi={country.aqi}
-          />
+          <Location key={city.id} location={city.city} aqi={city.aqi} />
         ))}
       </div>
     );
