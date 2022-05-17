@@ -1,22 +1,15 @@
-import { useSelector } from 'react-redux';
 import './Container.styles.scss';
-import Details from '../Details/Details';
-import Header from '../Header/Header';
+import LocationList from '../LocationList/LocationList';
 
-const Container = () => {
-  const countries = useSelector((state) => state.countries);
-
-  const printCountries = () => {
-    console.log(Object.keys(countries));
-  };
-
+const Container = (props) => {
+  const { continent, country } = props;
   return (
     <div>
-      <Header />
-      <Details />
-      <button type="button" onClick={printCountries}>
-        Print
-      </button>
+      <LocationList
+        location={country || continent}
+        type={country ? 'country' : 'continent'}
+      />
+      <button type="button">Print</button>
     </div>
   );
 };

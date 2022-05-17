@@ -9,6 +9,8 @@ function App() {
       <NavBar />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/:continent" element={<Home />} />
+        <Route path="/:continent/:country" element={<Home />} />
       </Routes>
     </div>
   );
