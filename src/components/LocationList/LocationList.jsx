@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import Location from '../Location/Location';
 
 const LocationList = (props) => {
@@ -7,11 +8,13 @@ const LocationList = (props) => {
     return (
       <div className="countries-list">
         {countries.map((country) => (
-          <Location
-            key={country.name}
-            location={country.name}
-            aqi={country.aqi}
-          />
+          <Link to={country.iso2}>
+            <Location
+              key={country.name}
+              location={country.name}
+              aqi={country.aqi}
+            />
+          </Link>
         ))}
       </div>
     );
