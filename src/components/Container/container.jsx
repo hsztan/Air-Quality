@@ -16,8 +16,13 @@ const Container = (props) => {
   }
 
   useEffect(() => {
+    if (!filteredCountries) return;
+    console.log(filteredCountries);
+    const countriesHaveAQI = filteredCountries.some((country) => country.aqi);
+    console.log(countriesHaveAQI);
+    if (countriesHaveAQI) return;
     if (continent) dispatch(getAirQuality(filteredCountries));
-  }, []);
+  }, [dispatch, filteredCountries, continent]);
 
   if (country) {
     return (

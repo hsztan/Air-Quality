@@ -6,6 +6,7 @@ const initialState = countries;
 export const getAirQuality = createAsyncThunk(
   'countries/getQuality',
   async (filteredCountries) => {
+    console.log('fetch activated');
     const promiseArray = filteredCountries.map((country) => {
       return fetch(
         `http://api.openweathermap.org/data/2.5/air_pollution?lat=${country.lat}&lon=${country.long}&appid=e3b0800eb9436f5c097b68c74afc4975`
