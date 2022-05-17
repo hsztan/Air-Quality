@@ -3,8 +3,10 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 export const getCities = createAsyncThunk(
   'cities/getCities',
   async (countryCode) => {
-    const res = fetch(
-      `https://wft-geo-db.p.rapidapi.com/v1/geo/cities/?countryIds=CL&limit=10`,
+    console.log('citiesAPI', 'fetch CITIES');
+    console.log(countryCode);
+    const res = await fetch(
+      `https://wft-geo-db.p.rapidapi.com/v1/geo/cities/?countryIds=${countryCode}&limit=10`,
       {
         method: 'GET',
         headers: {
@@ -15,7 +17,7 @@ export const getCities = createAsyncThunk(
       }
     );
     const data = await res.json();
-    return data.results;
+    return data;
   }
 );
 
@@ -30,7 +32,11 @@ const citiesSlice = createSlice({
   reducers: {},
   extraReducers: {
     [getCities.fulfilled]: (state, action) => {
-      state.data = action.payload;
+      console.log(action);
+      state.data = action.payload.data;
+    },
+    [getCities.pending]: (state, action) => {
+      state.status = 'pending';
     },
   },
 });
