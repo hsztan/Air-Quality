@@ -3,6 +3,7 @@ import Location from '../Location/Location';
 const LocationList = (props) => {
   const { location, type, countries } = props;
   console.log(type);
+  console.log(countries);
 
   if (countries) {
     return (

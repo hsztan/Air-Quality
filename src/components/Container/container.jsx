@@ -17,7 +17,7 @@ const Container = (props) => {
 
   useEffect(() => {
     if (continent) dispatch(getAirQuality(filteredCountries));
-  }, [dispatch, filteredCountries, continent]);
+  }, []);
 
   if (country) {
     return (

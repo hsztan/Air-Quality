@@ -13,7 +13,10 @@ export const getAirQuality = createAsyncThunk(
     });
     const res = await Promise.all(promiseArray);
     const data = await Promise.all(res.map((response) => response.json()));
-    return data;
+    const countriesWithAQI = filteredCountries.map((country, i) => {
+      return { ...country, aqi: data[i].list[0].main.aqi };
+    });
+    return countriesWithAQI;
   }
 );
 
@@ -23,7 +26,12 @@ const countriesSlice = createSlice({
   reducers: {},
   extraReducers: {
     [getAirQuality.fulfilled]: (state, action) => {
-      console.log(action.payload);
+      const keys = Object.keys(state);
+      keys.forEach((key) => {
+        if (state[key].length === action.payload.length) {
+          state[key] = action.payload;
+        }
+      });
     },
   },
 });
