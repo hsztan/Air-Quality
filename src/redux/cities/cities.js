@@ -1,10 +1,11 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+import getAirQualityAPI from '../apis-helpers/air-quality-api';
 
 export const getCities = createAsyncThunk(
   'cities/getCities',
   async (countryCode) => {
     const res = await fetch(
-      `https://wft-geo-db.p.rapidapi.com/v1/geo/cities/?countryIds=${countryCode}&limit=10`,
+      `https://wft-geo-db.p.rapidapi.com/v1/geo/cities/?countryIds=${countryCode}&limit=10&minPopulation=400000`,
       {
         method: 'GET',
         headers: {
@@ -15,7 +16,16 @@ export const getCities = createAsyncThunk(
       }
     );
     const data = await res.json();
-    return data;
+    const citiesWithAQI = await getAirQualityAPI(data.data);
+    return citiesWithAQI;
+  }
+);
+
+export const getCitiesAQI = createAsyncThunk(
+  'cities/getCitiesAQI',
+  async (cities) => {
+    const citiesWithAQI = await getAirQualityAPI(cities.data);
+    return citiesWithAQI;
   }
 );
 
@@ -30,10 +40,17 @@ const citiesSlice = createSlice({
   reducers: {},
   extraReducers: {
     [getCities.fulfilled]: (state, action) => {
-      state.data = action.payload.data;
+      state.data = action.payload;
       state.status = 'fullfilled';
     },
     [getCities.pending]: (state, action) => {
+      state.status = 'pending';
+    },
+    [getCitiesAQI.fulfilled]: (state, action) => {
+      state.data = action.payload;
+      state.status = 'fullfilled';
+    },
+    [getCitiesAQI.pending]: (state, action) => {
       state.status = 'pending';
     },
   },

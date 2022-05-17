@@ -17,6 +17,7 @@ const Container = (props) => {
   if (continent && !country) {
     filteredCountries = countries[continent];
   }
+  //TODO
   if (country) {
     // if (country in countryCodes) {
     //   console.log('in countryCodes condition');
@@ -37,7 +38,6 @@ const Container = (props) => {
   }, [dispatch, countryCode]);
 
   if (country) {
-    console.log(cities);
     return (
       <div className="container">
         <div>
