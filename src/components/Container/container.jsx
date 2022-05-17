@@ -54,6 +54,9 @@ const Container = (props) => {
           <LocationList location={continent} type="detail" />
         </div>
         <div className="bottom">
+          <div className="bottom-header">
+            <h2>Countries</h2>
+          </div>
           <LocationList countries={filteredCountries} type="list" />
         </div>
       </div>
