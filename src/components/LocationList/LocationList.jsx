@@ -1,7 +1,7 @@
 import Location from '../Location/Location';
 
 const LocationList = (props) => {
-  const { location, type, countries } = props;
+  const { location, type, countries, cities } = props;
 
   if (countries) {
     return (
@@ -11,6 +11,20 @@ const LocationList = (props) => {
             key={country.name}
             location={country.name}
             aqi={country.aqi}
+          />
+        ))}
+      </div>
+    );
+  }
+
+  if (cities?.data?.length) {
+    return (
+      <div className="cities-list">
+        {cities.data.map((city) => (
+          <Location
+            key={city.id}
+            location={city.city}
+            // aqi={country.aqi}
           />
         ))}
       </div>

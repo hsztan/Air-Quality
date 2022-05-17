@@ -28,22 +28,27 @@ const Container = (props) => {
     const countriesHaveAQI = filteredCountries?.some((country) => country.aqi);
     if (filteredCountries && !countriesHaveAQI)
       dispatch(getAirQuality(filteredCountries));
+  }, [dispatch, filteredCountries, country, countryCode]);
 
-    if (countryCode) {
-      console.log('countryCode', cities);
-      if (cities.status === 'pending') return;
+  useEffect(() => {
+    if (countryCode && cities.status !== 'pending') {
       dispatch(getCities(countryCode));
     }
-  }, [dispatch, filteredCountries, country, countryCode, cities.status]);
+  }, [dispatch, countryCode]);
 
   if (country) {
+    console.log(cities);
     return (
-      <div>
-        <LocationList location={country} type="detail" />
+      <div className="container">
+        <div>
+          <LocationList location={country} type="detail" />
+        </div>
+        <div>
+          <LocationList cities={cities} type="list" />
+        </div>
       </div>
     );
-  }
-  if (continent) {
+  } else if (continent) {
     return (
       <div className="container">
         <div>
@@ -54,18 +59,19 @@ const Container = (props) => {
         </div>
       </div>
     );
+  } else {
+    return (
+      <div className="continents">
+        <Link to="/AF">Africa</Link>
+        <Link to="/AS">Asia</Link>
+        <Link to="/EU">Europe</Link>
+        <Link to="/NA">North America</Link>
+        <Link to="/OC">Oceania</Link>
+        <Link to="/SA">South America</Link>
+        <Link to="/AN">Antartica</Link>
+      </div>
+    );
   }
-  return (
-    <div className="continents">
-      <Link to="/AF">Africa</Link>
-      <Link to="/AS">Asia</Link>
-      <Link to="/EU">Europe</Link>
-      <Link to="/NA">North America</Link>
-      <Link to="/OC">Oceania</Link>
-      <Link to="/SA">South America</Link>
-      <Link to="/AN">Antartica</Link>
-    </div>
-  );
 };
 
 export default Container;
