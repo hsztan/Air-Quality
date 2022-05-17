@@ -1,13 +1,11 @@
-const NavBar = (props) => {
-  const { history } = props;
-  const handleSubmit = (direction) => {
-    direction === 'forward' ? history.goForward() : history.goBack();
-  };
+import { useNavigate } from 'react-router-dom';
+const NavBar = () => {
+  const navigate = useNavigate();
 
   return (
     <nav className="nav-bar">
-      <button onClick={() => handleSubmit('forward')}>Back</button>
-      <button onClick={() => handleSubmit()}>Forward</button>
+      <button onClick={() => navigate(-1)}>Back</button>
+      <button onClick={() => navigate(1)}>Forward</button>
     </nav>
   );
 };
