@@ -1,4 +1,13 @@
 .container {
+  h3 {
+    margin: 0;
+    font-size: 1rem;
+    width: 7rem;
+  }
+
+  p {
+    margin: 0;
+  }
   color: #fff;
   .top {
     height: 25vh;
@@ -54,4 +63,26 @@
         }
       }
     }
+    .bottom {
+      .countries-list {
+        img {
+          display: none;
+        }
+        .wrap {
+          box-sizing: border-box;
+          padding: 0.5rem;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          height: 3.5rem;
+          h3 {
+            text-align: left;
+          }
+        }
+      }
+    
+    }
+    
+
 }
+

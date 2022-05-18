@@ -1,6 +1,13 @@
 const SearchBar = (props) => {
   const { handleKeyDown } = props;
-  return <input type="text" onKeyDown={handleKeyDown} />;
+  return (
+    <input
+      id="nav-search"
+      type="text"
+      placeholder="search"
+      onKeyDown={handleKeyDown}
+    />
+  );
 };
 
 export default SearchBar;

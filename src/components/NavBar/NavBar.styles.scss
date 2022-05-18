@@ -24,4 +24,23 @@
     font-weight: 300;
     margin: 0;
   }
+  #nav-search {
+    text-align: center;
+    font-size: 0.6rem;
+    color: #000;
+    font-style: italic;
+    width: 24vw;
+    height: 0.7rem;
+    border: none;
+    border-radius: 10px;
+    &::placeholder{
+      color: #ec4c8a;
+      font-style: italic;
+      text-align: center;
+      font-size: 0.6rem;
+    }
+    &:focus {
+      outline: none;
+    }
+  }
 }
