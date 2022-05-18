@@ -1652,3 +1652,13 @@ export const countryCodes = {
   ZM: 'Zambia',
   ZW: 'Zimbabwe',
 };
+
+export const continentsNames = {
+  AF: 'Africa',
+  AN: 'Antarctica',
+  AS: 'Asia',
+  EU: 'Europe',
+  NA: 'North America',
+  OC: 'Oceania',
+  SA: 'South America',
+};
