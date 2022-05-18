@@ -1,4 +1,5 @@
 import { useNavigate } from 'react-router-dom';
+import SearchBar from '../SearchBar/SearchBar';
 import './NavBar.styles.scss';
 const NavBar = (props) => {
   const navigate = useNavigate();
@@ -17,7 +18,7 @@ const NavBar = (props) => {
       <div className="actions">
         <ul>
           <li>
-            <input type="text" onKeyDown={handleKeyDown} />
+            <SearchBar handleKeyDown={handleKeyDown} />
           </li>
         </ul>
       </div>
