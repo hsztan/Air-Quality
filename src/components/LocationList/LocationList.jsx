@@ -7,15 +7,19 @@ const LocationList = (props) => {
   if (countries) {
     return (
       <div className="countries-list">
-        {countries.map((country) => (
-          <Link to={country.iso2}>
-            <Location
-              key={country.name}
-              location={country.name}
-              aqi={country.aqi}
-            />
-          </Link>
-        ))}
+        <ul>
+          {countries.map((country) => (
+            <li>
+              <Link to={country.iso2}>
+                <Location
+                  key={country.name}
+                  location={country.name}
+                  aqi={country.aqi}
+                />
+              </Link>
+            </li>
+          ))}
+        </ul>
       </div>
     );
   }
@@ -23,9 +27,13 @@ const LocationList = (props) => {
   if (cities?.data?.length) {
     return (
       <div className="cities-list">
-        {cities.data.map((city) => (
-          <Location key={city.id} location={city.city} aqi={city.aqi} />
-        ))}
+        <ul>
+          {cities.data.map((city) => (
+            <li>
+              <Location key={city.id} location={city.city} aqi={city.aqi} />
+            </li>
+          ))}
+        </ul>
       </div>
     );
   }

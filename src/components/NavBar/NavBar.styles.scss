@@ -32,6 +32,7 @@
   }
   #nav-search {
     width: 100%;
+    background-color: #fc5193;
     text-align: center;
     font-size: 0.6rem;
     color: #000;
@@ -40,7 +41,7 @@
     border: none;
     border-radius: 10px;
     &::placeholder{
-      color: #ec4c8a;
+      color: #fff;
       font-style: italic;
       text-align: center;
       font-size: 0.6rem;

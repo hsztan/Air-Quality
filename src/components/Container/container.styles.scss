@@ -98,5 +98,17 @@
         text-align: center;
       }
     }
+    ul {
+      margin: 0;
+      padding: 0;
+      li {
+        &:nth-child(odd)  {
+          background-color: #cc3f74;
+        }
+        &:nth-child(even) {
+          background-color: #fc5193;
+        }
+      }
+    }
 }
 
