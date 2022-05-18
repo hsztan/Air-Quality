@@ -2,7 +2,8 @@ import { Link } from 'react-router-dom';
 import Location from '../Location/Location';
 
 const LocationList = (props) => {
-  const { location, type, countries, cities } = props;
+  const { location, type, countries, cities, countryName, continentName } =
+    props;
 
   if (countries) {
     return (
@@ -12,6 +13,7 @@ const LocationList = (props) => {
             <li>
               <Link to={country.iso2}>
                 <Location
+                  countryName={countryName}
                   key={country.name}
                   location={country.name}
                   aqi={country.aqi}
@@ -40,7 +42,10 @@ const LocationList = (props) => {
 
   return (
     <div className={type}>
-      <Location location={location} type={type} />
+      <Location
+        location={countryName || continentName || location}
+        type={type}
+      />
     </div>
   );
 };

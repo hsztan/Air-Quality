@@ -10,7 +10,11 @@ const Home = () => {
   return (
     <div className="container">
       <NavBar title={country || continentName || 'continents'} />
-      <Container continent={continentName} country={country} />
+      <Container
+        continent={continent}
+        country={country}
+        continentName={continentName}
+      />
     </div>
   );
 };

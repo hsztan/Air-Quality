@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import { countryCodes, continentsNames } from '../../data/data';
 import { getAirQuality } from '../../redux/countries/countries';
 import { getCities } from '../../redux/cities/cities';
 import './Container.styles.scss';
@@ -10,6 +11,8 @@ const Container = (props) => {
   const countries = useSelector((state) => state.countries);
   const cities = useSelector((state) => state.cities);
   const { continent, country } = props;
+  const continentName = continent ? continentsNames[continent] : null;
+  const countryName = country ? countryCodes[country] : null;
 
   const dispatch = useDispatch();
   let filteredCountries, countryCode;
@@ -40,9 +43,16 @@ const Container = (props) => {
     return (
       <div className="container">
         <div className="top">
-          <LocationList location={country} type="detail" />
+          <LocationList
+            location={country}
+            countryName={countryName}
+            type="detail"
+          />
         </div>
         <div className="bottom">
+          <div className="bottom-header">
+            <h2>Cities</h2>
+          </div>
           <LocationList cities={cities} type="list" />
         </div>
       </div>
@@ -51,7 +61,11 @@ const Container = (props) => {
     return (
       <div className="container">
         <div className="top">
-          <LocationList location={continent} type="detail" />
+          <LocationList
+            location={continent}
+            continentName={continentName}
+            type="detail"
+          />
         </div>
         <div className="bottom">
           <div className="bottom-header">
