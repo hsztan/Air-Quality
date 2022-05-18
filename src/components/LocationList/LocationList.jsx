@@ -10,11 +10,10 @@ const LocationList = (props) => {
       <div className="countries-list">
         <ul className="locations">
           {countries.map((country) => (
-            <li>
+            <li key={country.name}>
               <Link to={country.iso2}>
                 <Location
                   countryName={countryName}
-                  key={country.name}
                   location={country.name}
                   aqi={country.aqi}
                 />
@@ -31,8 +30,8 @@ const LocationList = (props) => {
       <div className="cities-list">
         <ul className="locations">
           {cities.data.map((city) => (
-            <li>
-              <Location key={city.id} location={city.city} aqi={city.aqi} />
+            <li key={city.id}>
+              <Location location={city.city} aqi={city.aqi} />
             </li>
           ))}
         </ul>

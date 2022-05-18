@@ -1654,13 +1654,37 @@ export const countryCodes = {
 };
 
 export const continentsNames = {
-  AF: 'Africa',
-  AN: 'Antarctica',
-  AS: 'Asia',
-  EU: 'Europe',
-  NA: 'North America',
-  OC: 'Oceania',
-  SA: 'South America',
+  AF: {
+    name: 'Africa',
+    image:
+      'https://en.wikipedia.org/wiki/Asia#/media/File:Asia_(orthographic_projection).svg',
+  },
+  AN: {
+    name: 'Antarctica',
+    image:
+      'https://en.wikipedia.org/wiki/Asia#/media/File:Asia_(orthographic_projection).svg',
+  },
+  AS: { name: 'Asia' },
+  EU: {
+    name: 'Europe',
+    image:
+      'https://en.wikipedia.org/wiki/Asia#/media/File:Asia_(orthographic_projection).svg',
+  },
+  NA: {
+    name: 'North America',
+    image:
+      'https://en.wikipedia.org/wiki/Asia#/media/File:Asia_(orthographic_projection).svg',
+  },
+  OC: {
+    name: 'Oceania',
+    image:
+      'https://en.wikipedia.org/wiki/Asia#/media/File:Asia_(orthographic_projection).svg',
+  },
+  SA: {
+    name: 'South America',
+    image:
+      'https://en.wikipedia.org/wiki/Asia#/media/File:Asia_(orthographic_projection).svg',
+  },
 };
 
 export const airQualityIndex = {

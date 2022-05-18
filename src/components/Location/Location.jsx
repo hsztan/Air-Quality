@@ -10,7 +10,7 @@ const Location = (props) => {
       </picture>
       <div className="wrap">
         <h3>{countryName || continentName || location}</h3>
-        <DataSnippet dataName="Air Quality" data={aqi} />
+        {aqi ? <DataSnippet dataName="Air Quality" data={aqi} /> : null}
       </div>
     </div>
   );

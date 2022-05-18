@@ -11,7 +11,7 @@ const Container = (props) => {
   const countries = useSelector((state) => state.countries);
   const cities = useSelector((state) => state.cities);
   const { continent, country } = props;
-  const continentName = continent ? continentsNames[continent] : null;
+  const continentName = continent ? continentsNames[continent].name : null;
   const countryName = country ? countryCodes[country] : null;
 
   const dispatch = useDispatch();
