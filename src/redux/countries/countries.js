@@ -1,5 +1,5 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import countries from './data';
+import countries from '../../data/data';
 
 const initialState = countries;
 

@@ -1,16 +1,19 @@
 import { Link } from 'react-router-dom';
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import { countryCodes, continentsNames } from '../../data/data';
 import { getAirQuality } from '../../redux/countries/countries';
 import { getCities } from '../../redux/cities/cities';
-// import { countryCodes } from '../../redux/countries/data';
 import './Container.styles.scss';
 import LocationList from '../LocationList/LocationList';
+import ContinentsPane from '../ContinentsPane/ContinentsPane';
 
 const Container = (props) => {
   const countries = useSelector((state) => state.countries);
   const cities = useSelector((state) => state.cities);
   const { continent, country } = props;
+  const continentName = continent ? continentsNames[continent].name : null;
+  const countryName = country ? countryCodes[country] : null;
 
   const dispatch = useDispatch();
   let filteredCountries, countryCode;
@@ -40,10 +43,18 @@ const Container = (props) => {
   if (country) {
     return (
       <div className="container">
-        <div>
-          <LocationList location={country} type="detail" />
+        <div className="top">
+          <LocationList
+            location={country}
+            countryName={countryName}
+            countryImageUrl={`https://flagcdn.com/72x54/${country.toLowerCase()}.png`}
+            type="detail"
+          />
         </div>
-        <div>
+        <div className="bottom">
+          <div className="bottom-header">
+            <h2>Cities</h2>
+          </div>
           <LocationList cities={cities} type="list" />
         </div>
       </div>
@@ -51,26 +62,23 @@ const Container = (props) => {
   } else if (continent) {
     return (
       <div className="container">
-        <div>
-          <LocationList location={continent} type="detail" />
+        <div className="top">
+          <LocationList
+            location={continent}
+            continentName={continentName}
+            type="detail"
+          />
         </div>
-        <div>
+        <div className="bottom">
+          <div className="bottom-header">
+            <h2>Countries</h2>
+          </div>
           <LocationList countries={filteredCountries} type="list" />
         </div>
       </div>
     );
   } else {
-    return (
-      <div className="continents">
-        <Link to="/AF">Africa</Link>
-        <Link to="/AS">Asia</Link>
-        <Link to="/EU">Europe</Link>
-        <Link to="/NA">North America</Link>
-        <Link to="/OC">Oceania</Link>
-        <Link to="/SA">South America</Link>
-        <Link to="/AN">Antartica</Link>
-      </div>
-    );
+    return <ContinentsPane />;
   }
 };
 
