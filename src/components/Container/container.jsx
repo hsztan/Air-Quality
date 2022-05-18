@@ -6,6 +6,7 @@ import { getAirQuality } from '../../redux/countries/countries';
 import { getCities } from '../../redux/cities/cities';
 import './Container.styles.scss';
 import LocationList from '../LocationList/LocationList';
+import ContinentsPane from '../ContinentsPane/ContinentsPane';
 
 const Container = (props) => {
   const countries = useSelector((state) => state.countries);
@@ -76,19 +77,7 @@ const Container = (props) => {
       </div>
     );
   } else {
-    return (
-      <div className="continents">
-        <Link to="/AF">Africa</Link>
-        <Link to="/AS">Asia</Link>
-        <Link to="/EU">Europe</Link>
-        <Link to="/NA">North America</Link>
-        <Link to="/OC">Oceania</Link>
-        <Link to="/SA">South America</Link>
-        <Link to="#"></Link>
-        <Link to="/AN">Antartica</Link>
-        <Link to="#"></Link>
-      </div>
-    );
+    return <ContinentsPane />;
   }
 };
 

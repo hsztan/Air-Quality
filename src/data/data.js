@@ -1664,7 +1664,11 @@ export const continentsNames = {
     image:
       'https://en.wikipedia.org/wiki/Asia#/media/File:Asia_(orthographic_projection).svg',
   },
-  AS: { name: 'Asia' },
+  AS: {
+    name: 'Asia',
+    image:
+      'https://en.wikipedia.org/wiki/Asia#/media/File:Asia_(orthographic_projection).svg',
+  },
   EU: {
     name: 'Europe',
     image:
