@@ -1662,3 +1662,12 @@ export const continentsNames = {
   OC: 'Oceania',
   SA: 'South America',
 };
+
+export const airQualityIndex = {
+  1: 'Good',
+  2: 'Moderate',
+  3: 'Unhealthy for Sensitive Groups',
+  4: 'Unhealthy',
+  5: 'Very Unhealthy',
+  6: 'Hazardous',
+};

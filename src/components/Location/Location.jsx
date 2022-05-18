@@ -1,6 +1,8 @@
+import { airQualityIndex } from '../../data/data';
+import DataSnippet from '../DataSnippet/DataSnippet';
+
 const Location = (props) => {
   const { location, type, aqi, imageUrl, countryName, continentName } = props;
-  console.log(location, continentName, countryName);
   return (
     <div className={`location-${type}`}>
       <picture>
@@ -8,7 +10,7 @@ const Location = (props) => {
       </picture>
       <div className="wrap">
         <h3>{countryName || continentName || location}</h3>
-        <p>{aqi}</p>
+        <DataSnippet dataName="Air Quality" data={aqi} />
       </div>
     </div>
   );
