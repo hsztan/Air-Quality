@@ -1,20 +1,37 @@
 import { Link } from 'react-router-dom';
-import asia from '../../assets/images/asia.png';
+import asiaImg from '../../assets/images/asia.png';
+import africaImg from '../../assets/images/africa.png';
+import antarticaImg from '../../assets/images/antartica.png';
+import europeImg from '../../assets/images/europe.png';
+import northAmericaImg from '../../assets/images/north-america.webp';
+import southAmericaImg from '../../assets/images/south-america.webp';
+import oceaniaImg from '../../assets/images/oceania.png';
 
 const ContinentsPane = () => {
-  console.log(asia);
   return (
     <div className="continents">
-      <Link style={{ backgroundImage: `url(${asia})` }} to="/AF">
+      <Link style={{ backgroundImage: `url(${africaImg})` }} to="/AF">
         Africa
       </Link>
-      <Link to="/AS">Asia</Link>
-      <Link to="/EU">Europe</Link>
-      <Link to="/NA">North America</Link>
-      <Link to="/OC">Oceania</Link>
-      <Link to="/SA">South America</Link>
+      <Link style={{ backgroundImage: `url(${asiaImg})` }} to="/AS">
+        Asia
+      </Link>
+      <Link style={{ backgroundImage: `url(${europeImg})` }} to="/EU">
+        Europe
+      </Link>
+      <Link style={{ backgroundImage: `url(${northAmericaImg})` }} to="/NA">
+        North America
+      </Link>
+      <Link style={{ backgroundImage: `url(${oceaniaImg})` }} to="/OC">
+        Oceania
+      </Link>
+      <Link style={{ backgroundImage: `url(${southAmericaImg})` }} to="/SA">
+        South America
+      </Link>
       <Link to="#"></Link>
-      <Link to="/AN">Antartica</Link>
+      <Link style={{ backgroundImage: `url(${antarticaImg})` }} to="/AN">
+        Antartica
+      </Link>
       <Link to="#"></Link>
     </div>
   );
