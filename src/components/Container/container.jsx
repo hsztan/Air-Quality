@@ -70,7 +70,9 @@ const Container = (props) => {
         <Link to="/NA">North America</Link>
         <Link to="/OC">Oceania</Link>
         <Link to="/SA">South America</Link>
+        <Link to="#"></Link>
         <Link to="/AN">Antartica</Link>
+        <Link to="#"></Link>
       </div>
     );
   }
