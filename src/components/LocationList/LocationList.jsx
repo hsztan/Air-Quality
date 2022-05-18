@@ -7,7 +7,7 @@ const LocationList = (props) => {
   if (countries) {
     return (
       <div className="countries-list">
-        <ul>
+        <ul className="locations">
           {countries.map((country) => (
             <li>
               <Link to={country.iso2}>

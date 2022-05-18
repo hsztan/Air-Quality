@@ -32,8 +32,13 @@
     flex-basis: 20vw;
     background-color: #ec4c8a;
     ul {
+      width: 100%;
+      margin: 0;
+      padding: 0;
       background-color: inherit;
       li {
+        margin: 0;
+        width: 100%;
         background-color: #ec4c8a !important;
       }
     }
