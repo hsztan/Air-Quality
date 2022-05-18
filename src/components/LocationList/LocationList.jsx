@@ -27,7 +27,7 @@ const LocationList = (props) => {
   if (cities?.data?.length) {
     return (
       <div className="cities-list">
-        <ul>
+        <ul className="locations">
           {cities.data.map((city) => (
             <li>
               <Location key={city.id} location={city.city} aqi={city.aqi} />
