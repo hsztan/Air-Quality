@@ -47,6 +47,7 @@ const Container = (props) => {
           <LocationList
             location={country}
             countryName={countryName}
+            countryImageUrl={`https://flagcdn.com/72x54/${country.toLowerCase()}.png`}
             type="detail"
           />
         </div>
