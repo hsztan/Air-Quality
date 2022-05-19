@@ -1,54 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Pages renders correctly CityPage page renders correctly 1`] = `
-Array [
-  <nav
-    className="nav-bar"
-  >
-    <button
-      onClick={[Function]}
-      type="button"
-    >
-      &lt;
-    </button>
-    <h1 />
-    <div
-      className="actions"
-    >
-      <ul>
-        <li>
-          <input
-            id="nav-search"
-            onKeyDown={[Function]}
-            placeholder="search"
-            type="text"
-          />
-        </li>
-      </ul>
-    </div>
-  </nav>,
-  <div
-    className="city"
-  >
-    <h1>
-      City
-    </h1>
-    <p />
-    <h2>
-      Population
-    </h2>
-    <img
-      alt="group of people"
-      src="population.png"
-    />
-    <p />
-    <h2>
-      Air Quality
-    </h2>
-    <p />
-  </div>,
-]
-`;
+exports[`Pages renders correctly CityPage page renders correctly 1`] = `null`;
 
 exports[`Pages renders correctly Home page renders correctly 1`] = `
 <div
