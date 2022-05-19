@@ -15,7 +15,7 @@ const NavBar = (props) => {
   };
   return (
     <nav className="nav-bar">
-      {/* <button type="button" onClick={() => navigate(-1)}>{'<'}</button> */}
+      <button type="button" onClick={() => navigate(-1)}>{'<'}</button>
       <h1>{title}</h1>
       <div className="actions">
         <ul>
