@@ -1,7 +1,15 @@
+import PropTypes from 'prop-types';
 import DataSnippet from '../DataSnippet/DataSnippet';
 
 const Location = (props) => {
-  const { location, type, aqi, imageUrl, countryName, continentName } = props;
+  const {
+    location,
+    type,
+    aqi,
+    imageUrl,
+    countryName,
+    continentName,
+  } = props;
 
   return (
     <div className={`location-${type}`}>
@@ -9,7 +17,7 @@ const Location = (props) => {
         <picture>
           <img
             src={imageUrl}
-            alt="image"
+            alt={`flag of ${countryName}`}
             className={imageUrl.includes('flagcdn') ? 'flag-details' : ''}
           />
         </picture>
@@ -23,3 +31,12 @@ const Location = (props) => {
 };
 
 export default Location;
+
+Location.propTypes = {
+  location: PropTypes.string.isRequired,
+  type: PropTypes.string.isRequired,
+  aqi: PropTypes.number.isRequired,
+  imageUrl: PropTypes.string.isRequired,
+  countryName: PropTypes.string.isRequired,
+  continentName: PropTypes.string.isRequired,
+};

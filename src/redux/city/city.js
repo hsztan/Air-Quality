@@ -8,7 +8,7 @@ const city = createSlice({
   reducers: {
     setCity: (state, action) => {
       // eslint-disable-next-line no-param-reassign
-      state.city = action.payload;
+      state = action.payload;
     },
   },
 });

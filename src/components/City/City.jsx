@@ -1,23 +1,32 @@
+import PropTypes from 'prop-types';
 import './City.styles.scss';
 import NavBar from '../NavBar/NavBar';
 import populationImg from '../../assets/images/population.png';
+
 const City = (props) => {
   const { city } = props;
-  console.log('city component', city);
   return (
     <>
-      <NavBar title={city.city.name} />
+      <NavBar title={city.name} />
       <div className="city">
         <h1>City</h1>
-        <p>{city.city.name}</p>
+        <p>{city.name}</p>
         <h2>Population</h2>
         <img src={populationImg} alt="group of people" />
-        <p>{city.city.population}</p>
+        <p>{city.population}</p>
         <h2>Air Quality</h2>
-        <p>{city.city.aqi}</p>
+        <p>{city.aqi}</p>
       </div>
     </>
   );
 };
 
 export default City;
+
+City.propTypes = {
+  city: PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    population: PropTypes.number.isRequired,
+    aqi: PropTypes.number.isRequired,
+  }).isRequired,
+};

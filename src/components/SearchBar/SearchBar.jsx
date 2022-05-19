@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 const SearchBar = (props) => {
   const { handleKeyDown } = props;
   return (
@@ -11,3 +13,7 @@ const SearchBar = (props) => {
 };
 
 export default SearchBar;
+
+SearchBar.propTypes = {
+  handleKeyDown: PropTypes.func.isRequired,
+};
