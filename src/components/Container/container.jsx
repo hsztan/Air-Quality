@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { countryCodes, continentsNames } from '../../data/data';
@@ -83,3 +83,8 @@ const Container = (props) => {
 };
 
 export default Container;
+
+Container.propTypes = {
+  continent: PropTypes.string.isRequired,
+  country: PropTypes.string.isRequired,
+};
