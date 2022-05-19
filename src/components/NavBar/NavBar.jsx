@@ -15,7 +15,7 @@ const NavBar = (props) => {
   };
   return (
     <nav className="nav-bar">
-      <button type="button" onClick={() => navigate(-1)}>{'<'}</button>
+      {/* <button type="button" onClick={() => navigate(-1)}>{'<'}</button> */}
       <h1>{title}</h1>
       <div className="actions">
         <ul>
@@ -31,5 +31,9 @@ const NavBar = (props) => {
 export default NavBar;
 
 NavBar.propTypes = {
-  title: PropTypes.string.isRequired,
+  title: PropTypes.string,
+};
+
+NavBar.defaultProps = {
+  title: '',
 };

@@ -59,6 +59,7 @@ const LocationList = (props) => {
           {cities.data.map((city) => (
             <li key={city.id}>
               <button
+                className="city-button"
                 type="button"
                 onClick={() => handleCityClick(city)}
                 onKeyDown={() => handleCityClick(city)}

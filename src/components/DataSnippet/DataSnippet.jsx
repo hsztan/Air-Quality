@@ -14,6 +14,11 @@ const DataSnippet = (props) => {
 export default DataSnippet;
 
 DataSnippet.propTypes = {
-  dataName: PropTypes.string.isRequired,
-  data: PropTypes.number.isRequired,
+  dataName: PropTypes.string,
+  data: PropTypes.number,
+};
+
+DataSnippet.defaultProps = {
+  dataName: '',
+  data: 0,
 };

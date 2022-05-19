@@ -15,5 +15,9 @@ const SearchBar = (props) => {
 export default SearchBar;
 
 SearchBar.propTypes = {
-  handleKeyDown: PropTypes.func.isRequired,
+  handleKeyDown: PropTypes.func,
+};
+
+SearchBar.defaultProps = {
+  handleKeyDown: () => {},
 };

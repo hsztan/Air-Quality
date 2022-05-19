@@ -83,6 +83,11 @@ const Container = (props) => {
 export default Container;
 
 Container.propTypes = {
-  continent: PropTypes.string.isRequired,
-  country: PropTypes.string.isRequired,
+  continent: PropTypes.string,
+  country: PropTypes.string,
+};
+
+Container.defaultProps = {
+  continent: null,
+  country: null,
 };
