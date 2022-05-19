@@ -1,8 +1,8 @@
-import { airQualityIndex } from '../../data/data';
 import DataSnippet from '../DataSnippet/DataSnippet';
 
 const Location = (props) => {
   const { location, type, aqi, imageUrl, countryName, continentName } = props;
+
   return (
     <div className={`location-${type}`}>
       {imageUrl ? (
