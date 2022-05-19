@@ -16,22 +16,19 @@ const Container = (props) => {
   const countryName = country ? countryCodes[country] : null;
 
   const dispatch = useDispatch();
-  let filteredCountries, countryCode;
+  let filteredCountries;
+  let countryCode;
   if (continent && !country) {
     filteredCountries = countries[continent];
   }
-  //TODO
+
   if (country) {
-    // if (country in countryCodes) {
-    //   console.log('in countryCodes condition');
     countryCode = country;
-    // }
   }
 
   useEffect(() => {
     const countriesHaveAQI = filteredCountries?.some((country) => country.aqi);
-    if (filteredCountries && !countriesHaveAQI)
-      dispatch(getAirQuality(filteredCountries));
+    if (filteredCountries && !countriesHaveAQI) dispatch(getAirQuality(filteredCountries));
   }, [dispatch, filteredCountries, country, countryCode]);
 
   useEffect(() => {
@@ -59,6 +56,7 @@ const Container = (props) => {
         </div>
       </div>
     );
+  // eslint-disable-next-line no-else-return
   } else if (continent) {
     return (
       <div className="container">

@@ -7,15 +7,15 @@ const City = (props) => {
   const { city } = props;
   return (
     <>
-      <NavBar title={city.city.name} />
+      <NavBar title={city.name} />
       <div className="city">
         <h1>City</h1>
-        <p>{city.city.name}</p>
+        <p>{city.name}</p>
         <h2>Population</h2>
         <img src={populationImg} alt="group of people" />
-        <p>{city.city.population}</p>
+        <p>{city.population}</p>
         <h2>Air Quality</h2>
-        <p>{city.city.aqi}</p>
+        <p>{city.aqi}</p>
       </div>
     </>
   );

@@ -1,5 +1,6 @@
 import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
+import PropTypes from 'prop-types';
 import { setCity } from '../../redux/city/city';
 import Location from '../Location/Location';
 import asiaImg from '../../assets/images/asia.png';
@@ -26,7 +27,6 @@ const LocationList = (props) => {
   const navigate = useNavigate();
 
   const handleCityClick = (city) => {
-    console.log('city', city);
     dispatch(setCity(city));
     navigate('/city/city/city');
   };
@@ -57,8 +57,14 @@ const LocationList = (props) => {
       <div className="cities-list">
         <ul className="locations">
           {cities.data.map((city) => (
-            <li key={city.id} onClick={() => handleCityClick(city)}>
-              <Location location={city.city} aqi={city.aqi} city={true} />
+            <li key={city.id}>
+              <button
+                type="button"
+                onClick={() => handleCityClick(city)}
+                onKeyDown={() => handleCityClick(city)}
+              >
+                <Location location={city.name} aqi={city.aqi} city />
+              </button>
             </li>
           ))}
         </ul>
@@ -90,7 +96,6 @@ const LocationList = (props) => {
     }
   }
 
-  console.log(countryImageUrl, continentImage);
   return (
     <div className={type}>
       <Location
@@ -103,3 +108,27 @@ const LocationList = (props) => {
 };
 
 export default LocationList;
+
+LocationList.propTypes = {
+  location: PropTypes.string.isRequired,
+  type: PropTypes.string.isRequired,
+  countries: PropTypes.arrayOf(
+    PropTypes.shape({
+      name: PropTypes.string.isRequired,
+      aqi: PropTypes.number.isRequired,
+      iso2: PropTypes.string.isRequired,
+    }),
+  ).isRequired,
+  cities: PropTypes.shape({
+    data: PropTypes.arrayOf(
+      PropTypes.shape({
+        id: PropTypes.number.isRequired,
+        name: PropTypes.string.isRequired,
+        aqi: PropTypes.number.isRequired,
+      }),
+    ),
+  }).isRequired,
+  countryName: PropTypes.string.isRequired,
+  continentName: PropTypes.string.isRequired,
+  countryImageUrl: PropTypes.string.isRequired,
+};
