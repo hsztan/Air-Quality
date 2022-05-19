@@ -1,9 +1,10 @@
+import PropTypes from 'prop-types';
 import './City.styles.scss';
 import NavBar from '../NavBar/NavBar';
 import populationImg from '../../assets/images/population.png';
+
 const City = (props) => {
   const { city } = props;
-  console.log('city component', city);
   return (
     <>
       <NavBar title={city.city.name} />
@@ -21,3 +22,11 @@ const City = (props) => {
 };
 
 export default City;
+
+City.propTypes = {
+  city: PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    population: PropTypes.number.isRequired,
+    aqi: PropTypes.number.isRequired,
+  }).isRequired,
+};
