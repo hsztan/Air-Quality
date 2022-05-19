@@ -25,8 +25,8 @@ export default City;
 
 City.propTypes = {
   city: PropTypes.shape({
-    name: PropTypes.string.isRequired,
-    population: PropTypes.number.isRequired,
-    aqi: PropTypes.number.isRequired,
+    name: PropTypes.string,
+    population: PropTypes.number,
+    aqi: PropTypes.number,
   }).isRequired,
 };
