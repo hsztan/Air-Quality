@@ -1,8 +1,21 @@
-# Getting Started with Create React App
+# World Air Quality
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+> This is an SPA app that displays the Air Quality of Countries. You can filter the data by continents and by countries. It also displays mayor city population and air quality.
 
-## Available Scripts
+## Built With
+
+- HTML
+- CSS
+- SASS
+- Javascript
+- Git
+- React
+- Redux
+
+## Live Demo
+- [Netlify](https://space-hub-travelers.netlify.app/)
+
+## Setup
 
 In the project directory, you can run:
 
@@ -68,3 +81,37 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+## Authors
+
+👤 **Henry Nawrocki**
+
+- GitHub: [@hsztan](https://github.com/hsztan)
+- Twitter: [@hsztanski](https://twitter.com/hsztanski)
+- LinkedIn: [henry-nawrocki](https://linkedin.com/in/henry-nawrocki)
+
+👤 **Dangelo Arrivillaga**
+
+- GitHub: [@Dangelo-JAN](https://github.com/Dangelo-JAN)
+- LinkedIn: [Soluciones Empresriales Dangelo Arrivillaga](https://www.linkedin.com/in/soluciones-empresariales-dangelo-arrivillaga-2a144718a/)
+
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome!
+
+Feel free to check the [issues page](../../issues/).
+
+## Show your support
+
+Give a ⭐️ if you like this project!
+
+## Acknowledgments
+
+- Hat tip to anyone whose code was used
+- Inspiration
+- etc
+
+## 📝 License
+
+This project is [MIT](./MIT.md) licensed.
