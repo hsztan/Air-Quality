@@ -13,7 +13,10 @@
 - Redux
 
 ## Live Demo
-- [Netlify](https://space-hub-travelers.netlify.app/)
+- [Netlify](https://world-air-hsztan.netlify.app/)
+
+## Video Overview
+- [Loom](https://www.loom.com/share/7ca8df4ad3374b43a8f6f30db1170900)
 
 ## Setup
 
