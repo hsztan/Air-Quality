@@ -18,11 +18,20 @@
   .continents {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(calc(100% / 3), 1fr));
-    :nth-child(odd) {
-       background-color: #cc3f74;
+    p {
+      padding: 0.5rem;
+      border-radius: 5px;
+        background-color: rgba(0, 0, 0, 0.2) !important;
       }
+    :nth-child(odd) {
+      
+       background-color: #cc3f74;
+        
+      }
+
     a {
-      font-size: 0.7rem;
+      font-size: 1.5rem;
+      
       padding: 0.5rem;
       overflow-wrap: break-word;
       display: flex;
@@ -32,6 +41,12 @@
       color: inherit;
       background-color: #fc5193;
       height: 33vw;
+      background-repeat: no-repeat;
+      background-size: cover;
+      font-weight: bolder;
+     
+
+      
     }
   }
   .detail {
@@ -43,37 +58,64 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+      
+      picture {
+          img {
+            width: 60vw;
+            height: 24.5vh;
+            object-fit: cover;
+            position: sticky;
+            
+            
+          }
+          .flag-details{
+            position: relative;
+            top: 50%;
+            left: 10vw;
+            height: 10vh ;
+            width: auto; 
+          }
+        }
+        
+      
       .wrap {
         padding-top: 0.60rem;
         display: flex;
         flex-direction: column;
         text-align: right;
+
+        
+
         h3 {
           width: 7rem;
           margin: 0;
-          margin-right: 0.75rem;
+          margin-right: 1rem;
           font-size: 1rem;
           text-transform: uppercase;
          
         }
         p {
           margin: 0;
-          margin-right: 0.75rem;
+          margin-right: 1rem;
           font-size: 0.50rem;
         }
       }
     }
     .bottom {
       .countries-list, .cities-list {
-        // img {
-        //   display: none;
-        // }
+        img {
+          position: absolute;
+          left: 1rem;
+          margin-top: 1rem;
+          height: 1.5rem;
+        }
         .wrap {
           color: #fff;
           font-weight: 300;
           font-size: 0.8rem;
           box-sizing: border-box;
-          padding: 0.5rem;
+          padding-right: 1rem;
+          padding-left: 5rem;
           display: flex;
           justify-content: space-between;
           align-items: center;
@@ -82,6 +124,7 @@
             font-size: inherit;
             font-weight: inherit;
             text-align: left;
+            font-weight: bolder;
           }
           .data {
             display: flex;
@@ -121,5 +164,8 @@
         }
       }
     }
+
+    
+
 }
 
