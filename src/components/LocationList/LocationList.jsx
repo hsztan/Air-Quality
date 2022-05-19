@@ -1,4 +1,6 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { setCity } from '../../redux/city/city';
 import Location from '../Location/Location';
 import asiaImg from '../../assets/images/asia.png';
 import africaImg from '../../assets/images/africa.png';
@@ -20,6 +22,14 @@ const LocationList = (props) => {
   } = props;
 
   let continentImage;
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  const handleCityClick = (city) => {
+    console.log('city', city);
+    dispatch(setCity(city));
+    navigate('/city/city/city');
+  };
 
   if (countries) {
     return (
@@ -47,8 +57,8 @@ const LocationList = (props) => {
       <div className="cities-list">
         <ul className="locations">
           {cities.data.map((city) => (
-            <li key={city.id}>
-              <Location location={city.city} aqi={city.aqi} />
+            <li key={city.id} onClick={() => handleCityClick(city)}>
+              <Location location={city.city} aqi={city.aqi} city={true} />
             </li>
           ))}
         </ul>
