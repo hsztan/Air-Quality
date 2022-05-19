@@ -86,18 +86,13 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
 
 
-## Authors
+## Author
 
 👤 **Henry Nawrocki**
 
 - GitHub: [@hsztan](https://github.com/hsztan)
 - Twitter: [@hsztanski](https://twitter.com/hsztanski)
 - LinkedIn: [henry-nawrocki](https://linkedin.com/in/henry-nawrocki)
-
-👤 **Dangelo Arrivillaga**
-
-- GitHub: [@Dangelo-JAN](https://github.com/Dangelo-JAN)
-- LinkedIn: [Soluciones Empresriales Dangelo Arrivillaga](https://www.linkedin.com/in/soluciones-empresariales-dangelo-arrivillaga-2a144718a/)
 
 ## 🤝 Contributing
 
@@ -111,9 +106,7 @@ Give a ⭐️ if you like this project!
 
 ## Acknowledgments
 
-- Hat tip to anyone whose code was used
-- Inspiration
-- etc
+- Design by [Nelson Sakwa](https://www.behance.net/sakwadesignstudio) the [author of the original design](https://www.behance.net/gallery/31579789/Ballhead-App-(Free-PSDs)).
 
 ## 📝 License
 
