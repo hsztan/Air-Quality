@@ -7,7 +7,11 @@ const Location = (props) => {
     <div className={`location-${type}`}>
       {imageUrl ? (
         <picture>
-          <img src={imageUrl} alt="image" />
+          <img
+            src={imageUrl}
+            alt="image"
+            className={imageUrl.includes('flagcdn') ? 'flag-details' : ''}
+          />
         </picture>
       ) : null}
       <div className="wrap">

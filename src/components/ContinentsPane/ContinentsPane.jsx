@@ -11,26 +11,26 @@ const ContinentsPane = () => {
   return (
     <div className="continents">
       <Link style={{ backgroundImage: `url(${africaImg})` }} to="/AF">
-        Africa
+        <p>Africa</p>
       </Link>
       <Link style={{ backgroundImage: `url(${asiaImg})` }} to="/AS">
-        Asia
+        <p>Asia</p>
       </Link>
       <Link style={{ backgroundImage: `url(${europeImg})` }} to="/EU">
-        Europe
+        <p>Europe</p>
       </Link>
       <Link style={{ backgroundImage: `url(${northAmericaImg})` }} to="/NA">
-        North America
+        <p>North America</p>
       </Link>
       <Link style={{ backgroundImage: `url(${oceaniaImg})` }} to="/OC">
-        Oceania
+        <p>Oceania</p>
       </Link>
       <Link style={{ backgroundImage: `url(${southAmericaImg})` }} to="/SA">
-        South America
+        <p>South America</p>
       </Link>
       <Link to="#"></Link>
       <Link style={{ backgroundImage: `url(${antarticaImg})` }} to="/AN">
-        Antartica
+        <p>Antartica</p>
       </Link>
       <Link to="#"></Link>
     </div>
