@@ -5,6 +5,12 @@ Array [
   <nav
     className="nav-bar"
   >
+    <button
+      onClick={[Function]}
+      type="button"
+    >
+      &lt;
+    </button>
     <h1 />
     <div
       className="actions"
@@ -51,6 +57,12 @@ exports[`Pages renders correctly Home page renders correctly 1`] = `
   <nav
     className="nav-bar"
   >
+    <button
+      onClick={[Function]}
+      type="button"
+    >
+      &lt;
+    </button>
     <h1>
       continents
     </h1>
