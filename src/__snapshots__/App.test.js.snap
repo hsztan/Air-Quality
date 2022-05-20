@@ -1,0 +1,144 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Pages renders correctly CityPage page renders correctly 1`] = `null`;
+
+exports[`Pages renders correctly Home page renders correctly 1`] = `
+<div
+  className="container"
+>
+  <nav
+    className="nav-bar"
+  >
+    <button
+      onClick={[Function]}
+      type="button"
+    >
+      &lt;
+    </button>
+    <h1>
+      continents
+    </h1>
+    <div
+      className="actions"
+    >
+      <ul>
+        <li>
+          <input
+            id="nav-search"
+            onKeyDown={[Function]}
+            placeholder="search"
+            type="text"
+          />
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <div
+    className="continents"
+  >
+    <a
+      href="/AF"
+      onClick={[Function]}
+      style={
+        Object {
+          "backgroundImage": "url(africa.png)",
+        }
+      }
+    >
+      <p>
+        Africa
+      </p>
+    </a>
+    <a
+      href="/AS"
+      onClick={[Function]}
+      style={
+        Object {
+          "backgroundImage": "url(asia.png)",
+        }
+      }
+    >
+      <p>
+        Asia
+      </p>
+    </a>
+    <a
+      href="/EU"
+      onClick={[Function]}
+      style={
+        Object {
+          "backgroundImage": "url(europe.png)",
+        }
+      }
+    >
+      <p>
+        Europe
+      </p>
+    </a>
+    <a
+      href="/NA"
+      onClick={[Function]}
+      style={
+        Object {
+          "backgroundImage": "url(north-america.webp)",
+        }
+      }
+    >
+      <p>
+        North America
+      </p>
+    </a>
+    <a
+      href="/OC"
+      onClick={[Function]}
+      style={
+        Object {
+          "backgroundImage": "url(oceania.png)",
+        }
+      }
+    >
+      <p>
+        Oceania
+      </p>
+    </a>
+    <a
+      href="/SA"
+      onClick={[Function]}
+      style={
+        Object {
+          "backgroundImage": "url(south-america.webp)",
+        }
+      }
+    >
+      <p>
+        South America
+      </p>
+    </a>
+    <a
+      href="/"
+      onClick={[Function]}
+    >
+       
+    </a>
+    <a
+      href="/AN"
+      onClick={[Function]}
+      style={
+        Object {
+          "backgroundImage": "url(antartica.png)",
+        }
+      }
+    >
+      <p>
+        Antartica
+      </p>
+    </a>
+    <a
+      href="/"
+      onClick={[Function]}
+    >
+       
+    </a>
+  </div>
+</div>
+`;
